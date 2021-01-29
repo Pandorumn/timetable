@@ -1,0 +1,118 @@
+/* * {
+    box-sizing: border-box;
+} */
+
+body {
+    min-height: 38rem;
+    height: 100vh;
+    margin: 0;
+    background: #2e2e2e;
+    font-family: sans-serif;
+    color: #ccc;
+    border-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.table {
+    font-size: 0.8rem;
+    display: grid;
+    user-select: none;
+}
+
+.title {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.event {
+    padding: 0.6em;
+    border: 1px solid;
+    display: grid;
+    grid-template-columns: 4em 12em 4em 0;
+    grid-template-areas: "st-t name dur rem-t";
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    width: fit-content;
+    justify-self: center;
+}
+
+.start-time {
+    grid-area: st-t;
+    text-align: left;
+    margin-left: 0.5em;
+}
+
+.name {
+    grid-area: name;
+    border-left: inherit;
+    border-right: inherit;
+    border-width: 1px;
+}
+
+.name div:not(:first-of-type) {
+    margin-top: 0.3rem;
+}
+
+.remaining-time {
+    grid-area: rem-t;
+    text-align: right;
+    margin-right: 0.5em;
+}
+
+.duration {
+    grid-area: dur;
+    text-align: right;
+    margin-right: 0.6em;
+}
+
+.past {
+    border-color: black;
+    color: #555;
+}
+
+.past .name {
+    background: none !important;
+}
+
+.active {
+    border-color: #0070bb;
+    border-width: 5px;
+    padding: 0.3125rem;
+    background-color: #afddfc;
+    color: black;
+    font-weight: 600;
+    /* background: linear-gradient(to right, #0070bb88 30%, #afddfc 32%); */
+    grid-template-columns: 4em 12em 3.1em 4.4em;
+    grid-template-areas: "st-t name dur rem-t";
+}
+
+.active .name {
+    border: inherit;
+    border-width: 1px;
+}
+
+.active .duration {
+    text-align: right;
+    margin-right: 0;
+}
+
+.info {
+    margin: 5rem;
+}
+
+/* @media (max-height: 705px) {
+    .table {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-height: 670px) {
+    .table {
+        font-size: 0.7rem;
+    }
+} */
