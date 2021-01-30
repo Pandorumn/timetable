@@ -104,7 +104,7 @@ let eventsTemplates = [
 ];
 
 let indexDescr = ["Будни", "Выходные"];
-let currentIndex = 1;
+let currentIndex = localStorage.getItem('currentIndex') || 0;
 let events = eventsTemplates[currentIndex];
 
 // currentTime.setHours(3);
@@ -128,6 +128,7 @@ table.addEventListener("click", () => {
 
    if (currentIndex >= 1) currentIndex = -1;
    events = eventsTemplates[++currentIndex];
+   localStorage.setItem('currentIndex', currentIndex)
    start();
    initialize();
    monitoring();
