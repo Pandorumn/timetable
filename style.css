@@ -3,7 +3,7 @@
 } */
 
 body {
-    min-height: 38rem;
+    min-height: 400px;
     height: 100vh;
     margin: 0;
     background: #2e2e2e;
