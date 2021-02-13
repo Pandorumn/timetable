@@ -66,45 +66,43 @@ let eventsTemplates = [
    // Week Days
    [
       new Event("Начало дня", 0, 15, 7, 30),
-      new Event("Тренировка", 0, 20),
-      new Event("Растяжка", 0, 20),
+      new Event("_", 0, 30),
+      new Event("Тренировка", 0, 30),
+      new Event("Растяжка", 0, 30),
       new Event("Душ", 0, 15),
       new Event("Завтрак", 0, 20),
       new Event("_", 0, 20),
-      new Event("На работу", 0, 40),
+      new Event("На работу", 0, 50),
       new Event("Работа", 9, 00),
-      new Event("С работы", 0, 40),
-      new Event("_", 0, 20),
-      new Event("Тренировка", 0, 20),
-      new Event("Растяжка", 0, 20),
-      new Event("Вечерний туалет", 0, 10),
+      new Event("С работы", 0, 50),
       new Event("_", 1, 40),
       new Event("Сон", 9, 00),
    ],
    // Week End
-   [
-      new Event("Начало дня", 0, 15, 7, 30),
-      new Event("Тренировка", 0, 20),
-      new Event("Растяжка", 0, 20),
-      new Event("Душ", 0, 15),
-      new Event("Завтрак", 0, 20),
-      new Event("_", 3, 00),
-      new Event("Обед", 0, 20),
-      new Event("_", 2, 00),
-      new Event("Перекус", 0, 20),
-      new Event("_", 2, 00),
-      new Event("Ужин", 0, 20),
-      new Event("_", 3, 00),
-      new Event("Тренировка", 0, 20),
-      new Event("Растяжка", 0, 20),
-      new Event("Вечерний туалет", 0, 10),
-      new Event("_", 1, 40),
-      new Event("Сон", 9, 00),
-   ],
+   // [
+   //    new Event("Начало дня", 0, 15, 7, 30),
+   //    new Event("Тренировка", 0, 20),
+   //    new Event("Растяжка", 0, 20),
+   //    new Event("Душ", 0, 15),
+   //    new Event("Завтрак", 0, 20),
+   //    new Event("_", 3, 00),
+   //    new Event("Обед", 0, 20),
+   //    new Event("_", 2, 00),
+   //    new Event("Перекус", 0, 20),
+   //    new Event("_", 2, 00),
+   //    new Event("Ужин", 0, 20),
+   //    new Event("_", 3, 00),
+   //    new Event("Тренировка", 0, 20),
+   //    new Event("Растяжка", 0, 20),
+   //    new Event("Вечерний туалет", 0, 10),
+   //    new Event("_", 1, 40),
+   //    new Event("Сон", 9, 00),
+   // ],
 ];
 
 let indexDescr = ["Будни", "Выходные"];
 let currentIndex = localStorage.getItem('currentIndex') || 0;
+if (currentIndex >= eventsTemplates.length) currentIndex = 0;
 let events = eventsTemplates[currentIndex];
 
 // currentTime.setHours(3);
@@ -126,8 +124,9 @@ table.addEventListener("click", () => {
    //     monitoring();
    // }
 
-   if (currentIndex >= 1) currentIndex = -1;
-   events = eventsTemplates[++currentIndex];
+   currentIndex++
+   if (currentIndex >= eventsTemplates.length) currentIndex = 0;
+   events = eventsTemplates[currentIndex];
    localStorage.setItem('currentIndex', currentIndex)
    start();
    initialize();
@@ -169,7 +168,7 @@ function initialize() {
 
 function monitoring() {
    let currentTime = new Date();
-   document.querySelector(".title").textContent = indexDescr[currentIndex];
+   // document.querySelector(".title").textContent = indexDescr[currentIndex];
    let currentEventIndex = getCurrentEvent(currentTime);
    setActiveEvent(currentEventIndex);
    calcAndSetCompleteness(currentEventIndex, currentTime);
