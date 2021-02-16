@@ -72,10 +72,10 @@ let eventsTemplates = [
       new Event("-->", 0, 50),
       new Event("Работа", 9, 00),
       new Event("<--", 0, 50),
-      new Event("&#9775;", 0, 30),
+      new Event("&#9775;", 0, 20),
       new Event("Тренировка", 0, 30),
       new Event("Душ", 0, 15),
-      new Event("&#9775;", 1, 35),
+      new Event("&#9775;", 1, 45),
       new Event("Сон", 9, 00),
    ],
    // Week End
