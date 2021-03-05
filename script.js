@@ -65,17 +65,20 @@ class Event {
 let eventsTemplates = [
    // Week Days
    [
-      new Event("Начало дня", 0, 10, 7, 30),
-      new Event("&#9775;", 0, 20),
+      new Event("Начало дня", 0, 10, 7, 45),
+      new Event("&#9775;", 0, 10),
+      new Event("Слова", 0, 15),
       new Event("Завтрак", 0, 30),
-      new Event("-->", 0, 45),
-      new Event("Работа", 9, 00),
-      new Event("&#9775;", 1, 15),
-      new Event("<--", 0, 45),
-      new Event("&#9775;", 0, 30),
+      new Event("-->", 0, 40),
+      new Event("Работа", 8, 30),
+      new Event("<--", 0, 30),
+      new Event("&#9775;", 0, 15),
       new Event("Тренировка", 0, 30),
       new Event("Душ", 0, 15),
-      new Event("&#9775;", 1, 00),
+      new Event("Ужин", 0, 30),
+      new Event("&#9775;", 2, 15),
+      new Event("Слова", 0, 15),
+      new Event("&#9775;", 0, 15),
       new Event("Сон", 9, 00),
    ],
    // Week End
