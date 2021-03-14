@@ -62,21 +62,28 @@ class Event {
    }
 }
 
+const work = "<strong>&weierp;</strong>"
+const rest = "&#9775;"
+
 let eventsTemplates = [
    // Week Days
    [
       new Event("~", 0, 15, 7, 45),
       new Event("Слова", 0, 15),
-      new Event("Тренировка", 0, 30),
+      new Event("Тренировка", 0, 20),
       new Event("Душ", 0, 15),
-      new Event("Завтрак", 0, 30),
-      new Event("&#9775;", 0, 30),
+      new Event("Завтрак", 0, 15),
+      new Event(work, 0, 55),
       new Event("-->", 0, 45),
       new Event("Работа", 9, 00),
       new Event("<--", 0, 30),
-      new Event("&#9775;", 2, 00),
       new Event("Слова", 0, 15),
-      new Event("~", 0, 15),
+      new Event("Тренировка", 0, 20),
+      new Event("Душ", 0, 10),
+      new Event("Перекус", 0, 15),
+      new Event(work, 0, 45),
+      new Event(rest, 0, 40),
+      new Event("~", 0, 05),
       new Event("Сон", 9, 00),
    ],
    // Week End
@@ -163,6 +170,10 @@ function initialize() {
    temp.startMinutes += events[events.length - 1].durationMinutes;
    if (temp.getStartTime() !== events[0].getStartTime()) {
       console.error('Total time mismatch');
+      console.log(
+         temp.startHours - events[0].startHours,
+         temp.startMinutes - events[0].startMinutes
+      );
       // alert("Total time mismatch");
    }
 }
