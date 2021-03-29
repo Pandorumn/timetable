@@ -1,7 +1,4 @@
-const table = document.getElementsByClassName("table")[0];
-const timRemBrut = document.querySelectorAll(".info div")[0];
-const timRemNett = document.querySelectorAll(".info div")[1];
-let ticking = true;
+const table = document.querySelector(".table");
 
 class Event {
    name;
@@ -70,20 +67,18 @@ let eventsTemplates = [
    [
       new Event("~", 0, 15, 7, 45),
       new Event("Слова", 0, 15),
-      new Event("Тренировка", 0, 20),
-      new Event("Растяжка", 0, 10),
-      new Event("Душ", 0, 15),
-      new Event("Завтрак", 0, 15),
+      new Event("Завтрак", 0, 20),
+      new Event("~", 0, 10),
       new Event("-->", 0, 45),
       new Event("Работа", 9, 00),
       new Event("<--", 0, 45),
       new Event("~", 0, 05),
       new Event("Слова", 0, 15),
-      new Event("Тренировка", 0, 20),
+      new Event("Тренировка", 0, 40),
       new Event("Растяжка", 0, 10),
-      new Event("Душ", 0, 15),
+      new Event("Душ", 0, 20),
       new Event("Перекус", 0, 15),
-      new Event(rest, 1, 35),
+      new Event(rest, 1, 40),
       new Event("~", 0, 05),
       new Event("Сон", 9, 00),
    ],
@@ -114,25 +109,12 @@ let currentIndex = localStorage.getItem('currentIndex') || 0;
 if (currentIndex >= eventsTemplates.length) currentIndex = 0;
 let events = eventsTemplates[currentIndex];
 
-// currentTime.setHours(3);
-// currentTime.setMinutes(0);
-
 start();
 initialize();
 let repeat = setInterval(monitoring, 1000);
 monitoring();
 
 table.addEventListener("click", () => {
-   // if (ticking) {
-   //     clearInterval(repeat);
-   //     initialize();
-   //     ticking = false;
-   // } else {
-   //     repeat = setInterval(monitoring, 1000);
-   //     ticking = true;
-   //     monitoring();
-   // }
-
    currentIndex++
    if (currentIndex >= eventsTemplates.length) currentIndex = 0;
    events = eventsTemplates[currentIndex];
@@ -181,6 +163,8 @@ function initialize() {
 
 function monitoring() {
    let currentTime = new Date();
+   // currentTime.setHours(20);
+   // currentTime.setMinutes(50);
    // document.querySelector(".title").textContent = indexDescr[currentIndex];
    let currentEventIndex = getCurrentEvent(currentTime);
    setActiveEvent(currentEventIndex);
@@ -190,14 +174,13 @@ function monitoring() {
 
 function getCurrentEvent(currentTime) {
    for (let k in events) {
-      if (k == events.length - 1) {
-         return k;
-      } else if (
+      if (k == events.length - 1) return k;
+      if (
          ((currentTime.getHours() == events[k].startHours &&
             currentTime.getMinutes() >= events[k].startMinutes) ||
             currentTime.getHours() > events[k].startHours) &&
          ((currentTime.getHours() == events[+k + 1].startHours &&
-            currentTime.getMinutes() <= events[+k + 1].startMinutes) ||
+            currentTime.getMinutes() < events[+k + 1].startMinutes) ||
             currentTime.getHours() < events[+k + 1].startHours)
       ) {
          return k;
@@ -213,7 +196,9 @@ function setActiveEvent(k) {
    let i;
    while (i < events.length) {
       if (i < k) {
-         document.querySelector(`#ev${i}`).classList = "event past";
+         const element = document.querySelector(`#ev${i}`);
+         element.classList = "event past";
+         element.textContent = element.textContent.split(' ')[0]
       } else if (i > k) {
          document.querySelector(`#ev${i}`).classList = "event future";
       } else {
@@ -268,11 +253,4 @@ function calcAndSetInfo(currentTime) {
       remTime.m += 60;
       remTime.h--;
    }
-   // console.log(remTime.h + ' : ' + (remTime.m >= 10 ? remTime.m : '0' + remTime.m));
-   //    if (remTime.h < 0 || remTime.h >= 15) {
-   //       timRemBrut.textContent = "Sleep";
-   //       return;
-   //    }
-   //    timRemBrut.textContent =
-   //       remTime.h + " : " + (remTime.m >= 10 ? remTime.m : "0" + remTime.m);
 }
