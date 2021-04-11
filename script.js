@@ -63,7 +63,7 @@ const work = "<strong>&weierp;</strong>"
 const rest = "&#9775;"
 
 let eventsTemplates = [
-   // Week Days
+   // Work First
    [
       new Event("~", 0, 15, 7, 45),
       new Event("Слова", 0, 15),
@@ -82,26 +82,23 @@ let eventsTemplates = [
       new Event("~", 0, 05),
       new Event("Сон", 9, 00),
    ],
-   // Week End
-   // [
-   //    new Event("Начало дня", 0, 15, 7, 30),
-   //    new Event("Тренировка", 0, 20),
-   //    new Event("Растяжка", 0, 20),
-   //    new Event("Душ", 0, 15),
-   //    new Event("Завтрак", 0, 20),
-   //    new Event("&#9775;", 3, 00),
-   //    new Event("Обед", 0, 20),
-   //    new Event("&#9775;", 2, 00),
-   //    new Event("Перекус", 0, 20),
-   //    new Event("&#9775;", 2, 00),
-   //    new Event("Ужин", 0, 20),
-   //    new Event("&#9775;", 3, 00),
-   //    new Event("Тренировка", 0, 20),
-   //    new Event("Растяжка", 0, 20),
-   //    new Event("Вечерний туалет", 0, 10),
-   //    new Event("&#9775;", 1, 40),
-   //    new Event("Сон", 9, 00),
-   // ],
+   // Work Last
+   [
+      new Event("~", 0, 15, 8, 00),
+      new Event("Слова", 0, 15),
+      new Event("Тренировка", 0, 40),
+      new Event("Растяжка", 0, 10),
+      new Event("Душ", 0, 20),
+      new Event("Завтрак", 0, 20),
+      new Event("~", 0, 15),
+      new Event("-->", 0, 45),
+      new Event("Работа", 9, 00), // 12:00 14:15 16:30 18:45
+      new Event(rest, 1, 30),
+      new Event("<--", 0, 45),
+      new Event("Слова", 0, 15),
+      new Event("~", 0, 30),
+      new Event("Сон", 9, 00),
+   ],
 ];
 
 let indexDescr = ["Будни", "Выходные"];
