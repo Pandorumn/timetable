@@ -41,6 +41,10 @@ body {
     justify-self: center;
 }
 
+.event.empty {
+    visibility: hidden;
+}
+
 .start-time {
     grid-area: st-t;
     text-align: left;
