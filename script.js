@@ -65,11 +65,12 @@ const rest = "&#9775;"
 let eventsTemplates = [
    // Work at home
    [
-      new Event("Утренний туалет", 0, 20, 5, 40),
+      new Event("[сон]", 1, 00, 5, 40),
+      new Event("Утренний туалет", 0, 20),
       new Event("Слова", 0, 20),
       new Event("Работа", 2, 00),
       new Event("Еда", 0, 20),
-      new Event(rest, 2, 00),
+      new Event(rest, 1, 00),
       new Event("Тренировка, растяжка", 0, 40),
       new Event("Еда", 0, 20),
       new Event("Работа", 2, 00),
@@ -88,9 +89,9 @@ let eventsTemplates = [
    ],
    // Work in office
    [
-      new Event("Утренний туалет", 0, 20, 5, 40),
+      new Event("[сон]", 1, 00, 5, 40),
+      new Event("Утренний туалет", 0, 20),
       new Event("Слова", 0, 20),
-      new Event(rest, 1, 00),
       new Event("-->", 0, 40),
       new Event("Работа", 9, 45),
       new Event("<--", 0, 45),
