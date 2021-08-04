@@ -63,17 +63,16 @@ const work = "<strong>&weierp;</strong>"
 const rest = "&#9775;"
 
 const dayStart = [
-   new Event("[сон]", 1, 00, 5, 40),
-   new Event("Утренний туалет", 0, 20),
-   new Event("Слова", 0, 20),
-   new Event("Еда", 0, 20),
+   new Event("[сон]", 1, 00, 5, 30),
+   new Event("Утренний туалет", 0, 30),
+   new Event("Еда", 0, 30),
    new Event('', 0, 0),
 ]
 
 const dayEnd = [
    new Event('', 0, 0),
    new Event("Душ", 0, 20),
-   new Event("Слова", 0, 20),
+   new Event("Новости", 0, 20),
    new Event("Подготовка ко сну", 0, 20),
    new Event("Сон", 8, 00),
 ]
@@ -82,16 +81,16 @@ let eventsTemplates = [
    // Work at home
    [
       ...dayStart,
-      new Event(rest, 2, 00),
-      new Event("Тренировка, растяжка", 0, 40),
+      new Event(rest, 2, 30),
+      new Event("Тренировка", 0, 20),
       new Event("Еда", 0, 20),
-      new Event(rest, 2, 00),
-      new Event("Тренировка, растяжка", 0, 40),
+      new Event(rest, 2, 30),
+      new Event("Тренировка", 0, 20),
       new Event("Еда", 0, 20),
-      new Event(rest, 2, 00),
-      new Event("Тренировка, растяжка", 0, 40),
+      new Event(rest, 3, 00),
+      new Event("Тренировка", 0, 20),
       new Event("Еда", 0, 20),
-      new Event(rest, 4, 00),
+      new Event(rest, 3, 00),
       ...dayEnd,
    ],
    // Work in office
@@ -99,7 +98,7 @@ let eventsTemplates = [
       ...dayStart,
       new Event(rest, 11, 40),
       new Event("<--", 0, 50),
-      new Event("Runing Rabbit", 0, 30),
+      new Event("Бег", 0, 30),
       ...dayEnd,
    ],
 ];
