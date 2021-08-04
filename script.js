@@ -97,10 +97,9 @@ let eventsTemplates = [
    // Work in office
    [
       ...dayStart,
-      new Event(rest, 11, 10),
+      new Event(rest, 11, 40),
       new Event("<--", 0, 50),
-      new Event("Пробежка", 0, 30),
-      new Event("Тренировка выносливости", 0, 30),
+      new Event("Runing Rabbit", 0, 30),
       ...dayEnd,
    ],
 ];
