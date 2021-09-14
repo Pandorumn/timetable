@@ -71,9 +71,9 @@ const dayStart = [
 
 const dayEnd = [
    new Event('', 0, 0),
+   new Event("Running Rabbit", 0, 30),
    new Event("Душ", 0, 20),
-   new Event("Новости", 0, 20),
-   new Event("Подготовка ко сну", 0, 20),
+   new Event("~", 0, 40),
    new Event("Сон", 8, 00),
 ]
 
@@ -93,7 +93,7 @@ let eventsTemplates = [
       new Event(rest, 2, 00),
       new Event("Тренировка", 0, 25),
       new Event("Еда", 0, 20),
-      new Event(rest, 2, 00),
+      new Event(rest, 1, 30),
       ...dayEnd,
    ],
    // Work in office
@@ -101,7 +101,6 @@ let eventsTemplates = [
       ...dayStart,
       new Event(rest, 11, 45),
       new Event("<--", 0, 45),
-      new Event("Бег", 0, 30),
       ...dayEnd,
    ],
 ];
