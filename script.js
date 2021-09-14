@@ -63,9 +63,9 @@ const work = "<strong>&weierp;</strong>"
 const rest = "&#9775;"
 
 const dayStart = [
-   new Event("[сон]", 1, 00, 5, 30),
-   new Event("Утренний туалет", 0, 30),
-   new Event("Еда", 0, 30),
+   new Event("Утренний туалет", 0, 30, 6, 00),
+   new Event("Еда", 0, 20),
+   new Event("После еды", 0, 10),
    new Event('', 0, 0),
 ]
 
@@ -74,7 +74,7 @@ const dayEnd = [
    new Event("Running Rabbit", 0, 30),
    new Event("Душ", 0, 20),
    new Event("~", 0, 40),
-   new Event("Сон", 8, 00),
+   new Event("Сон", 8, 30),
 ]
 
 let eventsTemplates = [
@@ -93,13 +93,13 @@ let eventsTemplates = [
       new Event(rest, 2, 00),
       new Event("Тренировка", 0, 25),
       new Event("Еда", 0, 20),
-      new Event(rest, 1, 30),
+      new Event(rest, 2, 00),
       ...dayEnd,
    ],
    // Work in office
    [
       ...dayStart,
-      new Event(rest, 11, 45),
+      new Event(rest, 12, 15),
       new Event("<--", 0, 45),
       ...dayEnd,
    ],
