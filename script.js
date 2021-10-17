@@ -191,20 +191,23 @@ function getCurrentEvent(currentTime) {
 
 function setActiveEvent(k) {
   for (let i = 0; i < k; i++) {
-    document.querySelector(`#ev${i}`).classList =
-      "event past" + (events[i].name ? "" : " empty")
+    const element = document.querySelector(`#ev${i}`)
+    element.classList = "event past" + (events[i].name ? "" : " empty")
+    element.querySelector(".remaining-time").textContent = ""
   }
   document.querySelector(`#ev${k}`).classList = "event active"
   let i
   while (i < events.length) {
+    const element = document.querySelector(`#ev${i}`)
     if (i < k) {
-      const element = document.querySelector(`#ev${i}`)
       element.classList = "event past"
       element.textContent = element.textContent.split(" ")[0]
+      element.querySelector(".remaining-time").textContent = ""
     } else if (i > k) {
-      document.querySelector(`#ev${i}`).classList = "event future"
+      element.classList = "event future"
+      element.querySelector(".remaining-time").textContent = ""
     } else {
-      document.querySelector(`#ev${k}`).classList = "event active"
+      element.classList = "event active"
     }
   }
 }
