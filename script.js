@@ -64,8 +64,8 @@ const rest = "&#9775;"
 
 const dayStart = [
   new Event("Утренний туалет", 0, 30, 6, 30),
-  new Event("Бег", 0, 30),
-  new Event("Душ", 0, 15),
+  new Event("Бег", 0, 35),
+  new Event("Душ", 0, 10),
   new Event("Еда", 0, 20),
   new Event("После еды", 0, 10),
   new Event("", 0, 0),
@@ -73,8 +73,9 @@ const dayStart = [
 
 const dayEnd = [
   new Event("", 0, 0),
-  new Event("~", 1, 45),
+  new Event("~", 1, 35),
   new Event("Выносливость", 0, 30),
+  new Event("Душ", 0, 10),
   new Event("~", 1, 00),
   new Event("Сон", 8, 30),
 ]
@@ -84,15 +85,15 @@ let eventsTemplates = [
   [
     ...dayStart,
     new Event(rest, 3, 00),
-    new Event("Тренировка", 0, 15),
+    new Event("Тренировка", 0, 10),
     new Event("Еда", 0, 20),
     new Event(rest, 2, 30),
-    new Event("Тренировка", 0, 15),
+    new Event("Тренировка", 0, 10),
     new Event("Еда", 0, 20),
     new Event(rest, 2, 30),
-    new Event("Тренировка", 0, 15),
+    new Event("Тренировка", 0, 10),
     new Event("Еда", 0, 20),
-    new Event("~", 0, 45),
+    new Event("~", 1, 00),
     ...dayEnd,
   ],
   // Work in office
