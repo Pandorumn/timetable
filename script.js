@@ -73,9 +73,8 @@ const dayStart = [
 
 const dayEnd = [
   new Event("", 0, 0),
-  new Event("~", 1, 35),
-  new Event("Выносливость", 0, 30),
-  new Event("Душ", 0, 10),
+  new Event("~", 2, 00),
+  new Event("Душ", 0, 15),
   new Event("~", 1, 00),
   new Event("Сон", 8, 30),
 ]
