@@ -62,45 +62,71 @@ class Event {
 const work = "<strong>&weierp;</strong>"
 const rest = "&#9775;"
 
+const separator = new Event("", 0, 0)
+
+const routines = [
+  new Event("Слепая печать", 0, 10),
+  new Event("Слова", 0, 10),
+  // new Event("~", 1, 05),
+  new Event("Устный счёт", 0, 05),
+  new Event("Гитара", 0, 10),
+  new Event("Обучение", 0, 25),
+  new Event("Разминка", 0, 05),
+  new Event("Растяжка, речь", 0, 10),
+]
+
 const dayStart = [
-  new Event("Утренний туалет", 0, 30, 6, 30),
-  new Event("Бег", 0, 35),
-  new Event("Душ", 0, 10),
-  new Event("Еда", 0, 20),
-  new Event("После еды", 0, 10),
-  new Event("", 0, 0),
+  new Event("Утренний туалет", 0, 15, 6, 30),
 ]
 
 const dayEnd = [
-  new Event("", 0, 0),
-  new Event("~", 2, 00),
   new Event("Душ", 0, 15),
-  new Event("~", 1, 00),
-  new Event("Сон", 8, 30),
+  new Event("~", 0, 45),
+  new Event("Сон", 9, 00),
 ]
 
 let eventsTemplates = [
   // Work at home
   [
     ...dayStart,
-    new Event(rest, 3, 00),
-    new Event("Тренировка", 0, 10),
-    new Event("Еда", 0, 20),
-    new Event(rest, 2, 30),
-    new Event("Тренировка", 0, 10),
-    new Event("Еда", 0, 20),
-    new Event(rest, 2, 30),
-    new Event("Тренировка", 0, 10),
-    new Event("Еда", 0, 20),
-    new Event("~", 1, 00),
+    separator,
+    ...routines,
+    new Event("Бег", 0, 30),
+    new Event("Душ", 0, 10),
+    new Event("Завтрак", 0, 20),
+    separator,
+    new Event(work, 2, 15),
+    new Event("Тренировка", 0, 15),
+    new Event("Еда", 0, 15),
+    new Event(work, 2, 00),
+    new Event("Тренировка", 0, 15),
+    new Event("Еда", 0, 15),
+    new Event(work, 2, 00),
+    new Event("Медитация", 0, 30),
+    new Event(work, 2, 00),
+    new Event("Тренировка", 0, 15),
+    new Event("Еда", 0, 15),
+    separator,
+    ...routines,
     ...dayEnd,
   ],
   // Work in office
   [
     ...dayStart,
+    ...routines,
+    new Event("Завтрак", 0, 30),
+    separator,
     new Event("-->", 0, 45),
-    new Event(rest, 9, 00),
+    new Event(work, 2, 15),
+    new Event("Еда", 0, 15),
+    new Event(work, 2, 15),
+    new Event("Еда", 0, 15),
+    new Event(work, 2, 00),
+    new Event("Еда", 0, 15),
+    new Event(work, 2, 00),
     new Event("<--", 0, 45),
+    separator,
+    ...routines,
     ...dayEnd,
   ],
 ]
@@ -129,10 +155,18 @@ function start() {
   // Calculate and set start times
   for (let k in events) {
     if (k < 1) k = 1
-    events[k].startHours =
+    const updatedEvent = new Event(
+      events[k].name,
+      events[k].durationHours,
+      events[k].durationMinutes
+    )
+
+    updatedEvent.startHours =
       events[k - 1].startHours + events[k - 1].durationHours
-    events[k].startMinutes =
+    updatedEvent.startMinutes =
       events[k - 1].startMinutes + events[k - 1].durationMinutes
+
+    events[k] = updatedEvent
   }
 }
 
