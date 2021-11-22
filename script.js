@@ -71,8 +71,6 @@ const routines = [
   new Event("Устный счёт", 0, 05),
   new Event("Гитара", 0, 10),
   new Event("Обучение", 0, 25),
-  new Event("Разминка", 0, 05),
-  new Event("Растяжка, речь", 0, 10),
 ]
 
 const dayStart = [
@@ -91,7 +89,9 @@ let eventsTemplates = [
     ...dayStart,
     separator,
     ...routines,
+    new Event("Разминка", 0, 05),
     new Event("Бег", 0, 30),
+    new Event("Растяжка, речь", 0, 10),
     new Event("Душ", 0, 10),
     new Event("Завтрак", 0, 20),
     separator,
@@ -108,12 +108,16 @@ let eventsTemplates = [
     new Event(work, 2, 00),
     separator,
     ...routines,
+    new Event("Разминка", 0, 05),
+    new Event("Растяжка, речь", 0, 10),
     ...dayEnd,
   ],
   // Work in office
   [
     ...dayStart,
     ...routines,
+    new Event("Разминка", 0, 05),
+    new Event("Растяжка, речь", 0, 10),
     new Event("Завтрак", 0, 30),
     separator,
     new Event("-->", 0, 45),
@@ -127,6 +131,8 @@ let eventsTemplates = [
     new Event("<--", 0, 45),
     separator,
     ...routines,
+    new Event("Разминка", 0, 05),
+    new Event("Растяжка, речь", 0, 10),
     ...dayEnd,
   ],
 ]
