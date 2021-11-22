@@ -65,12 +65,12 @@ const rest = "&#9775;"
 const separator = new Event("", 0, 0)
 
 const routines = [
-  new Event("Слепая печать", 0, 10),
-  new Event("Слова", 0, 10),
-  // new Event("~", 1, 05),
-  new Event("Устный счёт", 0, 05),
-  new Event("Гитара", 0, 10),
-  new Event("Обучение", 0, 25),
+  new Event("~", 1, 00),
+  // new Event("Устный счёт", 0, 05),
+  // new Event("Слепая печать", 0, 10),
+  // new Event("Слова", 0, 10),
+  // new Event("Гитара", 0, 10),
+  // new Event("Обучение", 0, 25),
 ]
 
 const dayStart = [
