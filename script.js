@@ -86,7 +86,6 @@ let eventsTemplates = [
   // Work at home
   [
     ...dayStart,
-    separator,
     new Event("Разминка", 0, 05),
     new Event("Бег", 0, 30),
     new Event("Растяжка, речь", 0, 10),
@@ -115,9 +114,9 @@ let eventsTemplates = [
   // Work in office
   [
     ...dayStart,
-    ...routines,
     new Event("Разминка", 0, 05),
     new Event("Растяжка, речь", 0, 10),
+    ...routines,
     new Event("Завтрак", 0, 30),
     separator,
     new Event("-->", 0, 45),
