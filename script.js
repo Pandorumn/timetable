@@ -88,12 +88,12 @@ let eventsTemplates = [
   [
     ...dayStart,
     separator,
-    ...routines,
     new Event("Разминка", 0, 05),
     new Event("Бег", 0, 30),
     new Event("Растяжка, речь", 0, 10),
     new Event("Душ", 0, 10),
     new Event("Завтрак", 0, 20),
+    ...routines,
     separator,
     new Event(work, 2, 15),
     new Event("Тренировка", 0, 15),
