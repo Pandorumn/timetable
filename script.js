@@ -73,7 +73,7 @@ const routines = [
 ]
 
 const dayStart = [
-  new Event("Утренний туалет", 0, 15, 6, 30),
+  new Event("Утренний туалет", 0, 15, 6, 45),
 ]
 
 const dayEnd = [
