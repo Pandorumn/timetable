@@ -65,12 +65,11 @@ const rest = "&#9775;"
 const separator = new Event("", 0, 0)
 
 const routines = [
-  new Event("~", 1, 00),
-  // new Event("Устный счёт", 0, 05),
-  // new Event("Слепая печать", 0, 10),
-  // new Event("Слова", 0, 10),
-  // new Event("Гитара", 0, 10),
-  // new Event("Обучение", 0, 25),
+  new Event("Устный счёт", 0, 05),
+  new Event("Слепая печать", 0, 10),
+  new Event("Слова", 0, 10),
+  new Event("Гитара", 0, 10),
+  new Event("Обучение", 0, 25),
 ]
 
 const dayStart = [
@@ -93,7 +92,8 @@ let eventsTemplates = [
     new Event("Растяжка, речь", 0, 10),
     new Event("Душ", 0, 10),
     new Event("Завтрак", 0, 20),
-    ...routines,
+    // ...routines,
+    new Event("~", 1, 00),
     separator,
     new Event(work, 2, 15),
     new Event("Тренировка", 0, 15),
