@@ -65,20 +65,26 @@ const rest = "&#9775;"
 const separator = new Event("", 0, 0)
 
 const routines = [
+  new Event("Обучение", 0, 25),
   new Event("Устный счёт", 0, 05),
   new Event("Слепая печать", 0, 10),
   new Event("Слова", 0, 10),
   new Event("Гитара", 0, 10),
-  new Event("Обучение", 0, 25),
 ]
 
 const dayStart = [
-  new Event("Утренний туалет", 0, 15, 7, 30),
+  new Event("Утренний туалет", 0, 25, 7, 30),
+  new Event("Зарядка", 0, 10),
+  new Event("Растяжка, речь", 0, 10),
+  new Event("Завтрак", 0, 30),
+  separator,
+  ...routines,
 ]
 
 const dayEnd = [
   new Event("Душ", 0, 15),
-  new Event("~", 0, 45),
+  ...routines,
+  new Event("~", 0, 30),
   new Event("Сон", 9, 00),
 ]
 
@@ -86,10 +92,6 @@ let eventsTemplates = [
   // Work at home
   [
     ...dayStart,
-    new Event("Разминка", 0, 05),
-    new Event("Растяжка, речь", 0, 10),
-    new Event("Завтрак", 0, 30),
-    ...routines,
     separator,
     new Event(work, 2, 15),
     new Event("Тренировка", 0, 15),
@@ -103,7 +105,6 @@ let eventsTemplates = [
     new Event("Еда", 0, 15),
     new Event(work, 2, 00),
     separator,
-    ...routines,
     new Event("Разминка", 0, 05),
     new Event("Бег", 0, 30),
     new Event("Растяжка, речь", 0, 10),
@@ -112,10 +113,6 @@ let eventsTemplates = [
   // Work in office
   [
     ...dayStart,
-    new Event("Разминка", 0, 05),
-    new Event("Растяжка, речь", 0, 10),
-    new Event("Завтрак", 0, 30),
-    ...routines,
     separator,
     new Event("-->", 0, 45),
     new Event(work, 2, 15),
@@ -127,7 +124,6 @@ let eventsTemplates = [
     new Event(work, 2, 00),
     new Event("<--", 0, 45),
     separator,
-    ...routines,
     new Event("Растяжка, речь", 0, 15),
     ...dayEnd,
   ],
