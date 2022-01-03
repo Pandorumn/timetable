@@ -80,11 +80,10 @@ const dayStart = [
 const dayEnd = [
   new Event("Растяжка", 0, 10),
   new Event("Душ", 0, 15),
-  new Event("Обучение", 0, 30),
-  new Event("Английская речь", 0, 10),
   new Event("Слова", 0, 10),
+  new Event("Английская речь", 0, 10),
+  new Event("~", 1, 00),
   new Event("Гитара", 0, 10),
-  new Event("~", 0, 30),
   new Event("Сон", 9, 00),
 ]
 
