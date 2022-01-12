@@ -69,8 +69,8 @@ const dayStart = [
   new Event("Зарядка", 0, 10),
   new Event("Растяжка, речь", 0, 10),
   new Event("Завтрак", 0, 30),
+  new Event("~", 0, 15),
   separator,
-  new Event("Обучение", 0, 30),
   new Event("Слепая печать", 0, 5),
   new Event("Устный счёт", 0, 05),
   new Event("Слова", 0, 10),
@@ -78,8 +78,9 @@ const dayStart = [
 ]
 
 const dayEnd = [
-  new Event("Растяжка", 0, 10),
   new Event("Душ", 0, 15),
+  new Event("Растяжка", 0, 10),
+  new Event("Ужин", 0, 15),
   new Event("Слова", 0, 10),
   new Event("Английская речь", 0, 10),
   new Event("~", 1, 00),
@@ -114,13 +115,14 @@ let eventsTemplates = [
     new Event("-->", 0, 45),
     new Event(work, 2, 15),
     new Event("Еда", 0, 15),
-    new Event(work, 2, 15),
+    new Event(work, 2, 00),
     new Event("Еда", 0, 15),
     new Event(work, 2, 00),
     new Event("Еда", 0, 15),
     new Event(work, 2, 00),
     new Event("<--", 0, 50),
     separator,
+    new Event("Тренировка", 0, 15),
     ...dayEnd,
   ],
 ]
