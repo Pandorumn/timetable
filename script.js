@@ -65,7 +65,7 @@ const rest = "&#9775;"
 const separator = new Event("", 0, 0)
 
 const dayStart = [
-  new Event("Утренний туалет", 0, 25, 7, 30),
+  new Event("Утренний туалет", 0, 25, 7, 00),
   new Event("Зарядка", 0, 10),
   new Event("Растяжка, речь", 0, 10),
   new Event("Завтрак", 0, 30),
