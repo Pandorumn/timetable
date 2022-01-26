@@ -80,10 +80,10 @@ const dayStart = [
 const dayEnd = [
   new Event("Душ", 0, 15),
   new Event("Растяжка", 0, 10),
-  new Event("Ужин", 0, 15),
+  new Event("Ужин", 0, 20),
   new Event("Слова", 0, 10),
   new Event("Английская речь", 0, 10),
-  new Event("~", 1, 00),
+  new Event("~", 1, 30),
   new Event("Гитара", 0, 10),
   new Event("Сон", 9, 00),
 ]
@@ -104,8 +104,8 @@ let eventsTemplates = [
     new Event("Тренировка", 0, 15),
     new Event(work, 1, 30),
     separator,
-    new Event("~", 0, 45),
-    new Event("Бег", 0, 35),
+    new Event("~", 0, 15),
+    new Event("Бег", 0, 30),
     ...dayEnd,
   ],
   // Work in office
@@ -120,7 +120,6 @@ let eventsTemplates = [
     new Event(work, 3, 00),
     new Event("<--", 0, 45),
     separator,
-    new Event("~", 0, 35),
     new Event("Тренировка", 0, 15),
     ...dayEnd,
   ],
