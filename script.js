@@ -65,23 +65,22 @@ const rest = "&#9775;"
 const separator = new Event("", 0, 0)
 
 const dayStart = [
-  new Event("Утренний туалет", 0, 25, 7, 00),
+  new Event("Утренний туалет", 0, 25, 6, 50),
   new Event("Зарядка", 0, 10),
-  new Event("Растяжка, речь", 0, 10),
+  new Event("Растяжка", 0, 10),
+  new Event("Новости", 0, 15),
   new Event("Завтрак", 0, 30),
   separator,
   new Event("Слепая печать", 0, 5),
   new Event("Устный счёт", 0, 05),
-  new Event("Слова", 0, 10),
   new Event("Гитара", 0, 10),
-  new Event("~", 0, 15),
+  new Event("~", 0, 20),
 ]
 
 const dayEnd = [
   new Event("Душ", 0, 15),
   new Event("Растяжка", 0, 10),
   new Event("Ужин", 0, 20),
-  new Event("Слова", 0, 10),
   new Event("Английская речь", 0, 10),
   new Event("~", 1, 00),
   new Event("Гитара", 0, 10),
