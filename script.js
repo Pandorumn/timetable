@@ -64,33 +64,15 @@ const rest = "&#9775;"
 
 const separator = new Event("", 0, 0)
 
-const dayStart = [
-  new Event("Утренний туалет", 0, 25, 6, 50),
-  new Event("Зарядка", 0, 10),
-  new Event("Растяжка", 0, 10),
-  new Event("Новости", 0, 15),
-  new Event("Завтрак", 0, 30),
-  separator,
-  new Event("Слепая печать", 0, 5),
-  new Event("Устный счёт", 0, 05),
-  new Event("Гитара", 0, 10),
-  new Event("~", 0, 20),
-]
-
-const dayEnd = [
-  new Event("Душ", 0, 15),
-  new Event("Растяжка", 0, 10),
-  new Event("Ужин", 0, 20),
-  new Event("Английская речь", 0, 10),
-  new Event("~", 1, 00),
-  new Event("Гитара", 0, 10),
-  new Event("Сон", 9, 00),
-]
-
 let eventsTemplates = [
   // Work at home
   [
-    ...dayStart,
+    new Event("Утренний туалет", 0, 25, 7, 00),
+    new Event("Новости", 0, 15),
+    new Event("Зарядка", 0, 10),
+    new Event("Растяжка", 0, 10),
+    new Event("Завтрак", 0, 30),
+    new Event("~", 0, 30),
     separator,
     new Event(work, 2, 00),
     new Event("Тренировка", 0, 15),
@@ -100,31 +82,19 @@ let eventsTemplates = [
     new Event("Еда", 0, 15),
     new Event(work, 2, 00),
     new Event("Тренировка", 0, 15),
+    new Event("Ужин", 0, 15),
     new Event("Медитация", 0, 15),
     new Event(work, 2, 00),
     separator,
-    new Event("~", 0, 15),
-    new Event("Бег", 0, 30),
-    ...dayEnd,
-  ],
-  // Work in office
-  [
-    ...dayStart,
-    separator,
-    new Event("-->", 0, 45),
-    new Event(work, 2, 45),
-    new Event("Еда", 0, 15),
-    new Event(work, 2, 45),
-    new Event("Еда", 0, 15),
-    new Event(work, 3, 00),
-    new Event("<--", 0, 45),
-    separator,
-    new Event("Тренировка", 0, 15),
-    ...dayEnd,
+    new Event("~", 0, 20),
+    new Event("Душ", 0, 15),
+    new Event("Растяжка", 0, 10),
+    new Event("~", 2, 00),
+    new Event("Сон", 9, 00),
   ],
 ]
 
-let indexDescr = ["Дома", "В офисе"]
+let indexDescr = ["Away"]
 let currentIndex = localStorage.getItem("currentIndex") || 0
 if (currentIndex >= eventsTemplates.length) currentIndex = 0
 let events = eventsTemplates[currentIndex]
