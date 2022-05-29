@@ -65,44 +65,37 @@ const rest = "&#9775;"
 const separator = new Event("", 0, 0)
 
 let eventsTemplates = [
-  // Work at home
   [
-    new Event("Утренний туалет", 0, 25, 5, 15),
+    new Event("Утренний туалет", 0, 25, 6, 15),
     new Event("Новости", 0, 15),
     new Event("Зарядка", 0, 10),
+    new Event("Речь", 0, 10),
     new Event("Растяжка", 0, 10),
-    new Event("Завтрак", 0, 30),
+    new Event("Завтрак", 0, 20),
     new Event("~", 0, 15),
     separator,
     new Event(work, 2, 00),
-    new Event("Nap", 0, 15),
-    new Event("Речь", 0, 05),
-    new Event("Тренировка", 0, 15),
-    new Event("Первый обед", 0, 25),
+    new Event("Ланч", 0, 15),
     new Event(work, 2, 00),
-    new Event("Nap", 0, 15),
-    new Event("Речь", 0, 05),
-    new Event("Тренировка", 0, 15),
-    new Event("Второй обед", 0, 25),
+    new Event("Обед", 0, 15),
     new Event(work, 2, 00),
-    new Event("Новости", 0, 30),
+    new Event("Полдник", 0, 15),
+    new Event(work, 2, 00),
     new Event("Nap", 0, 30),
-    new Event("Речь", 0, 05),
-    new Event("Тренировка", 0, 15),
-    new Event("Ужин", 0, 25),
-    new Event(work, 2, 00),
+    new Event("Ужин", 0, 15),
     separator,
-    new Event("Речь", 0, 05),
-    new Event("Тренировка", 0, 15),
+    new Event("Речь", 0, 10),
     new Event("Растяжка", 0, 10),
     new Event("Душ", 0, 15),
+    new Event("Новости", 0, 45),
+    new Event("~", 1, 30),
     new Event("~", 1, 00),
-    new Event("Подготовка ко сну", 0, 15),
+    new Event("Подготовка ко сну", 0, 25),
     new Event("Сон", 8, 30),
   ],
 ]
 
-let indexDescr = ["Away"]
+let indexDescr = ["Recovery"]
 let currentIndex = localStorage.getItem("currentIndex") || 0
 if (currentIndex >= eventsTemplates.length) currentIndex = 0
 let events = eventsTemplates[currentIndex]
