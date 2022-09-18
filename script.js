@@ -65,39 +65,6 @@ const rest = "&#9775;"
 const separator = new Event("", 0, 0)
 
 let eventsTemplates = [
-  // Default
-  [
-    new Event("Утренний туалет", 0, 25, 6, 45),
-    new Event("Новости", 0, 15),
-    new Event("Речь", 0, 5),
-    new Event("Зарядка", 0, 10),
-    new Event("Растяжка", 0, 10),
-    new Event("Завтрак", 0, 30),
-    new Event("~", 0, 10),
-    separator,
-    new Event(work, 2, 15),
-    new Event("Ланч", 0, 15),
-    new Event(work, 2, 00),
-    new Event("Обед", 0, 30),
-    new Event(work, 0, 30),
-    new Event("Новости", 0, 15),
-    new Event(work, 1, 30),
-    new Event("Перекус", 0, 15),
-    new Event(work, 2, 00),
-    separator,
-    new Event("~", 0, 5),
-    new Event("Речь", 0, 10),
-    new Event("Разминка", 0, 10),
-    new Event("Тренировка", 0, 40),
-    new Event("Растяжка", 0, 20),
-    new Event("Душ", 0, 10),
-    new Event("Ужин", 0, 30),
-    new Event("Новости", 0, 15),
-    new Event("Лицо", 0, 10),
-    new Event("~", 1, 00),
-    new Event("Подготовка ко сну", 0, 15),
-    new Event("Сон", 9, 00),
-  ],
   [
     new Event("Утренний туалет", 0, 25, 6, 45),
     new Event("Новости", 0, 15),
@@ -134,7 +101,7 @@ let eventsTemplates = [
   ],
 ]
 
-let indexDescr = ["", "Split work"]
+let indexDescr = [""]
 let currentIndex = localStorage.getItem("currentIndex") || 0
 if (currentIndex >= eventsTemplates.length) currentIndex = 0
 let events = eventsTemplates[currentIndex]
