@@ -217,19 +217,30 @@ function setActiveEvent(k) {
 
 function calcAndSetCompleteness(k, currentTime) {
   let timePast =
-    currentTime.getHours() * 60 +
-    currentTime.getMinutes() -
-    events[k].startHours * 60 -
-    events[k].startMinutes
-  if (timePast < 0) timePast += 1440
-  let totalDuration = events[k].durationHours * 60 + events[k].durationMinutes
-  let completeness = (timePast / totalDuration) * 100
-  let timeRemaining = totalDuration - timePast
-  let hRem = Math.floor(timeRemaining / 60)
-  let mRem = timeRemaining % 60
-  if (mRem < 10) mRem = "0" + mRem
+    currentTime -
+    new Date(
+      currentTime.getFullYear(),
+      currentTime.getMonth(),
+      currentTime.getDate(),
+      events[k].startHours,
+      events[k].startMinutes
+    )
+  if (timePast < 0) timePast += 24 * 60 * 60 * 1000
 
-  if (hRem || mRem != 0) {
+  const minutesPast = timePast / 60 / 1000
+
+  let totalDuration = events[k].durationHours * 60 + events[k].durationMinutes
+  let completeness = (minutesPast / totalDuration) * 100
+  let timeRemaining = totalDuration - minutesPast
+  const remTimeToShow = {
+    hours: Math.floor(timeRemaining / 60),
+    minutes: Math.floor(timeRemaining % 60),
+  }
+  if (remTimeToShow.minutes < 10) {
+    remTimeToShow.minutes = "0" + remTimeToShow.minutes
+  }
+
+  if (remTimeToShow.hours || remTimeToShow.minutes != 0) {
     // Set percentage background fill
     document.querySelector(
       `#ev${k} .name`
@@ -240,7 +251,7 @@ function calcAndSetCompleteness(k, currentTime) {
     // Set remaining time
     document.querySelector(
       `#ev${k} .remaining-time`
-    ).textContent = ` ( ${hRem}:${mRem} ) `
+    ).textContent = ` ( ${remTimeToShow.hours}:${remTimeToShow.minutes} ) `
   } else {
     // Clear inline styling
     document.querySelector(`#ev${k} .name`).style.background = ""
