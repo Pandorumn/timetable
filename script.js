@@ -240,7 +240,7 @@ function calcAndSetCompleteness(k, currentTime) {
     remTimeToShow.minutes = "0" + remTimeToShow.minutes
   }
 
-  if (remTimeToShow.hours || remTimeToShow.minutes != 0) {
+  if (completeness < 100) {
     // Set percentage background fill
     document.querySelector(
       `#ev${k} .name`
