@@ -156,7 +156,7 @@ function initialize() {
       temp.startHours - events[0].startHours,
       temp.startMinutes - events[0].startMinutes
     )
-    // alert("Total time mismatch");
+    table.classList.add("has-error")
   }
 }
 

@@ -23,6 +23,20 @@ body {
     user-select: none;
 }
 
+.table.has-error {
+    position: relative;
+}
+.table.has-error::before {
+    content: '';
+    position: absolute;
+    top: -1.3rem;
+    left: -1rem;
+    height: calc(100% + 3rem);
+    width: calc(100% + 2rem);
+    box-shadow: 0px 0px 50px 0px red;
+    border-radius: 50px;
+}
+
 .title {
     margin-bottom: 0.5rem;
     font-weight: bold;
