@@ -66,19 +66,18 @@ const separator = new Event("", 0, 0)
 
 let eventsTemplates = [
   [
-    new Event("Утренний туалет", 0, 30, 8, 00),
+    new Event("Утренний туалет", 0, 30, 8, 15),
     new Event("Тренировка", 0, 15),
     new Event("Завтрак", 0, 15),
     new Event("Новости", 0, 15),
     separator,
-    new Event("~", 0, 15),
     new Event(work, 2, 00),
     new Event("Тренировка", 0, 15),
     new Event("Ланч", 0, 15),
     new Event(work, 2, 00),
     new Event("Тренировка", 0, 15),
     new Event("Обед", 0, 15),
-    new Event(work, 2, 00),
+    new Event(work, 2, 15),
     new Event("Тренировка", 0, 15),
     new Event("Ужин", 0, 15),
     separator,
