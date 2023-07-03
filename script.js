@@ -101,11 +101,11 @@ eventsTemplates.push([
 
 eventsTemplates.push([
   new Event("Утренний туалет", 0, 30, 6, 15),
-  new Event("Новости", 0, 15),
   new Event("Зарядка", 0, 15),
   separator,
   new Event("~", 2, 00),
   separator,
+  new Event("Новости", 0, 15),
   new Event("Тренировка", 0, 15),
   new Event("Завтрак", 0, 30),
   separator,
@@ -118,11 +118,11 @@ eventsTemplates.push([
   new Event(work, 2, 00),
   separator,
   new Event("Тренировка", 0, 15),
+  new Event("Растяжка", 0, 30),
   new Event("Ужин", 0, 15),
   new Event("Глаза", 0, 15),
-  new Event("Растяжка", 0, 45),
   separator,
-  new Event("~", 2, 45),
+  new Event("~", 3, 00),
   separator,
   new Event("Сон", 9, 00),
 ])
