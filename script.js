@@ -65,49 +65,53 @@ const rest = "&#9775;"
 const separator = new Event("", 0, 0)
 
 const eventsTemplates = [
-  [
-    new Event("Утренний туалет", 0, 30, 6, 15),
-    new Event("Зарядка", 0, 15),
-    separator,
-    new Event("~", 2, 0),
-    separator,
-    new Event("Новости", 0, 15),
-    new Event("Тренировка", 0, 15),
-    new Event("Завтрак", 0, 30),
-    separator,
-    new Event(work, 2, 0),
-    new Event("Тренировка", 0, 15),
-    new Event("Ланч", 0, 15),
-    new Event(work, 2, 0),
-    new Event("Тренировка", 0, 15),
-    new Event("Обед", 0, 15),
-    new Event(work, 2, 0),
-    separator,
-    new Event("Тренировка", 0, 15),
-    new Event("Растяжка", 0, 30),
-    new Event("Ужин", 0, 15),
-    new Event("Глаза", 0, 15),
-    separator,
-    new Event("~", 3, 0),
-    separator,
-    new Event("Сон", 9, 0),
-  ],
+  {
+    name: "Work in the middle",
+    events: [
+      new Event("Утренний туалет", 0, 30, 6, 15),
+      new Event("Зарядка", 0, 15),
+      separator,
+      new Event("~", 2, 0),
+      separator,
+      new Event("Новости", 0, 15),
+      new Event("Тренировка", 0, 15),
+      new Event("Завтрак", 0, 30),
+      separator,
+      new Event(work, 2, 0),
+      new Event("Тренировка", 0, 15),
+      new Event("Ланч", 0, 15),
+      new Event(work, 2, 0),
+      new Event("Тренировка", 0, 15),
+      new Event("Обед", 0, 15),
+      new Event(work, 2, 0),
+      separator,
+      new Event("Тренировка", 0, 15),
+      new Event("Растяжка", 0, 30),
+      new Event("Ужин", 0, 15),
+      new Event("Глаза", 0, 15),
+      separator,
+      new Event("~", 3, 0),
+      separator,
+      new Event("Сон", 9, 0),
+    ],
+  },
 ]
 
-eventsTemplates.push([
-  new Event("Утренний туалет", 0, 30, 7, 15),
-  new Event("Зарядка", 0, 15),
-  separator,
-  new Event("~", 1, 0),
-  ...eventsTemplates[0].slice(4, -1),
-  new Event("Сон", 10, 0),
+eventsTemplates.push({
+  name: "More sleep",
+  events: [
+    new Event("Утренний туалет", 0, 30, 7, 15),
+    new Event("Зарядка", 0, 15),
+    separator,
+    new Event("~", 1, 0),
+    ...eventsTemplates[0].events.slice(4, -1),
+    new Event("Сон", 10, 0),
+  ],
+})
 
-])
-
-let indexDescr = ["Work in the middle", "More sleep"]
 let currentIndex = localStorage.getItem("currentIndex") || 0
 if (currentIndex >= eventsTemplates.length) currentIndex = 0
-let events = eventsTemplates[currentIndex]
+let events = eventsTemplates[currentIndex].events
 
 start()
 initialize()
@@ -117,7 +121,7 @@ monitoring()
 table.addEventListener("click", () => {
   currentIndex++
   if (currentIndex >= eventsTemplates.length) currentIndex = 0
-  events = eventsTemplates[currentIndex]
+  events = eventsTemplates[currentIndex].events
   localStorage.setItem("currentIndex", currentIndex)
   start()
   initialize()
@@ -173,7 +177,8 @@ function monitoring() {
   let currentTime = new Date()
   // currentTime.setHours(20);
   // currentTime.setMinutes(50);
-  document.querySelector(".title").textContent = indexDescr[currentIndex]
+  document.querySelector(".title").textContent =
+    eventsTemplates[currentIndex].name
   let currentEventIndex = getCurrentEvent(currentTime)
   setActiveEvent(currentEventIndex)
   calcAndSetCompleteness(currentEventIndex, currentTime)
