@@ -64,14 +64,16 @@ const rest = "&#9775;"
 
 const separator = new Event("", 0, 0)
 
-let eventsTemplates = [
+const eventsTemplates = [
   [
-    new Event("Утренний туалет", 0, 30, 7, 15),
+    new Event("Утренний туалет", 0, 30, 6, 15),
+    new Event("Зарядка", 0, 15),
+    separator,
+    new Event("~", 2, 0),
+    separator,
     new Event("Новости", 0, 15),
     new Event("Тренировка", 0, 15),
-    new Event("Растяжка", 0, 15),
     new Event("Завтрак", 0, 30),
-    new Event("~", 1, 0),
     separator,
     new Event(work, 2, 0),
     new Event("Тренировка", 0, 15),
@@ -79,55 +81,30 @@ let eventsTemplates = [
     new Event(work, 2, 0),
     new Event("Тренировка", 0, 15),
     new Event("Обед", 0, 15),
-    new Event("Глаза", 0, 15),
     new Event(work, 2, 0),
+    separator,
     new Event("Тренировка", 0, 15),
+    new Event("Растяжка", 0, 30),
     new Event("Ужин", 0, 15),
     new Event("Глаза", 0, 15),
     separator,
-    new Event("Йога", 0, 30),
-    new Event("~", 3, 45),
+    new Event("~", 3, 0),
     separator,
     new Event("Сон", 9, 0),
   ],
 ]
 
 eventsTemplates.push([
-  new Event("Утренний туалет", 0, 30, 8, 15),
-  ...eventsTemplates[0].slice(1, 5),
-  ...eventsTemplates[0].slice(6, eventsTemplates[0].length - 1),
-  new Event("Сон", 10, 0),
-])
-
-eventsTemplates.push([
-  new Event("Утренний туалет", 0, 30, 6, 15),
+  new Event("Утренний туалет", 0, 30, 7, 15),
   new Event("Зарядка", 0, 15),
   separator,
-  new Event("~", 2, 0),
-  separator,
-  new Event("Новости", 0, 15),
-  new Event("Тренировка", 0, 15),
-  new Event("Завтрак", 0, 30),
-  separator,
-  new Event(work, 2, 0),
-  new Event("Тренировка", 0, 15),
-  new Event("Ланч", 0, 15),
-  new Event(work, 2, 0),
-  new Event("Тренировка", 0, 15),
-  new Event("Обед", 0, 15),
-  new Event(work, 2, 0),
-  separator,
-  new Event("Тренировка", 0, 15),
-  new Event("Растяжка", 0, 30),
-  new Event("Ужин", 0, 15),
-  new Event("Глаза", 0, 15),
-  separator,
-  new Event("~", 3, 0),
-  separator,
-  new Event("Сон", 9, 0),
+  new Event("~", 1, 0),
+  ...eventsTemplates[0].slice(4, -1),
+  new Event("Сон", 10, 0),
+
 ])
 
-let indexDescr = ["", "More sleep", "Work in the middle"]
+let indexDescr = ["Work in the middle", "More sleep"]
 let currentIndex = localStorage.getItem("currentIndex") || 0
 if (currentIndex >= eventsTemplates.length) currentIndex = 0
 let events = eventsTemplates[currentIndex]
