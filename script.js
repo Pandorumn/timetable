@@ -66,16 +66,14 @@ const separator = new Event("", 0, 0)
 
 const eventsTemplates = [
   {
-    name: "Work in the middle",
+    name: "Default",
     events: [
-      new Event("Утренний туалет", 0, 30, 6, 15),
+      new Event("Утренний туалет", 0, 30, 7, 15),    
       new Event("Зарядка", 0, 15),
-      separator,
-      new Event("~", 2, 0),
-      separator,
+      new Event("~", 1, 0),
       new Event("Новости", 0, 15),
-      new Event("Тренировка", 0, 15),
       new Event("Завтрак", 0, 30),
+      new Event("~", 0, 15),
       separator,
       new Event(work, 2, 0),
       new Event("Тренировка", 0, 15),
@@ -90,7 +88,7 @@ const eventsTemplates = [
       new Event("Ужин", 0, 15),
       new Event("Глаза", 0, 15),
       separator,
-      new Event("~", 3, 0),
+      new Event("~", 4, 0),
       separator,
       new Event("Сон", 9, 0),
     ],
@@ -100,11 +98,12 @@ const eventsTemplates = [
 eventsTemplates.push({
   name: "More sleep",
   events: [
-    new Event("Утренний туалет", 0, 30, 7, 15),
+    new Event("Утренний туалет", 0, 30, 8, 15),
     new Event("Зарядка", 0, 15),
-    separator,
-    new Event("~", 1, 0),
-    ...eventsTemplates[0].events.slice(4, -1),
+    new Event("Новости", 0, 15),
+    new Event("Завтрак", 0, 30),
+    new Event("~", 0, 15),
+    ...eventsTemplates[0].events.slice(6, -1),
     new Event("Сон", 10, 0),
   ],
 })
