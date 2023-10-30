@@ -169,6 +169,8 @@ function initialize() {
       temp.startMinutes - events[0].startMinutes
     )
     table.classList.add("has-error")
+  } else {
+    table.classList.remove("has-error")
   }
 }
 
