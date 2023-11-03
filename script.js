@@ -59,29 +59,33 @@ class Event {
   }
 }
 
-const work = "<strong>&weierp;</strong>"
-const rest = "&#9775;"
+const work = "<strong>$</strong>"
+const rest = "☯"
 
 const separator = new Event("", 0, 0)
+
+const workEvents = [
+  new Event(work, 2, 0),
+  new Event("Тренировка", 0, 15),
+  new Event("Ланч", 0, 15),
+  new Event(work, 2, 0),
+  new Event("Тренировка", 0, 15),
+  new Event("Обед", 0, 15),
+  new Event(work, 2, 0),
+]
 
 const eventsTemplates = [
   {
     name: "Default",
     events: [
-      new Event("Утренний туалет", 0, 30, 7, 15),    
+      new Event("Утренний туалет", 0, 30, 7, 15),
       new Event("Зарядка", 0, 15),
       new Event("~", 1, 0),
       new Event("Новости", 0, 15),
       new Event("Завтрак", 0, 30),
-      new Event("~", 0, 15),
+      new Event(rest, 0, 15),
       separator,
-      new Event(work, 2, 0),
-      new Event("Тренировка", 0, 15),
-      new Event("Ланч", 0, 15),
-      new Event(work, 2, 0),
-      new Event("Тренировка", 0, 15),
-      new Event("Обед", 0, 15),
-      new Event(work, 2, 0),
+      ...workEvents,
       separator,
       new Event("Тренировка", 0, 15),
       new Event("Растяжка", 0, 30),
@@ -102,9 +106,35 @@ eventsTemplates.push({
     new Event("Зарядка", 0, 15),
     new Event("Новости", 0, 15),
     new Event("Завтрак", 0, 30),
-    new Event("~", 0, 15),
+    new Event(rest, 0, 15),
     ...eventsTemplates[0].events.slice(6, -1),
     new Event("Сон", 10, 0),
+  ],
+})
+
+eventsTemplates.push({
+  name: "Controlled",
+  events: [
+    new Event("Утренний туалет", 0, 30, 7, 15),
+    new Event("Зарядка", 0, 15),
+    new Event("Новости", 0, 15),
+    new Event("Завтрак", 0, 30),
+    new Event(rest, 0, 15),
+    separator,
+    ...workEvents,
+    separator,
+    new Event("Тренировка", 0, 45),
+    new Event("Растяжка", 0, 30),
+    new Event("Ужин", 0, 15),
+    separator,
+    new Event("Программирование", 2, 0),
+    new Event(rest, 0, 15),
+    new Event("Новости", 0, 30),
+    new Event("Гитара", 0, 30),
+    new Event("Чтение", 1, 0),
+    separator,
+    new Event("Информационная изоляция", 0, 30),
+    new Event("Сон", 9, 0),
   ],
 })
 
