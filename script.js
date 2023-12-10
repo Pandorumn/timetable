@@ -59,7 +59,7 @@ class Event {
   }
 }
 
-const work = "<strong>$</strong>"
+const work = "💲"
 const rest = "☯"
 
 const separator = new Event("", 0, 0)
