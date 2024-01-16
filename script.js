@@ -76,73 +76,37 @@ const workEvents = [
 
 const eventsTemplates = [
   {
-    name: "Default",
+    name: "Controlled",
     events: [
-      new Event("Утренний туалет", 0, 30, 7, 15),
+      new Event("Утренний туалет", 0, 15, 7, 45),
       new Event("Зарядка", 0, 15),
-      new Event("~", 1, 0),
       new Event("Новости", 0, 15),
+      new Event("Речь", 0, 15),
       new Event("Завтрак", 0, 30),
       new Event(rest, 0, 15),
       separator,
       ...workEvents,
       separator,
-      new Event("Тренировка", 0, 15),
+      new Event(rest, 0, 15),
+      new Event("Тренировка", 0, 30),
       new Event("Растяжка", 0, 30),
       new Event("Ужин", 0, 15),
-      new Event("Глаза", 0, 15),
       separator,
-      new Event("~", 4, 0),
+      new Event(rest, 0, 10),
+      new Event("Чтение", 0, 50),
+      new Event("Гитара", 0, 15),
+      new Event(rest, 0, 15),
+      new Event("💲💲💲", 1, 30),
       separator,
+      new Event(rest, 0, 15),
+      new Event("Новости", 0, 45),
+      separator,
+      new Event("Чистка зубов", 0, 15),
+      new Event("Информационная изоляция", 0, 30),
       new Event("Сон", 9, 0),
     ],
   },
 ]
-
-eventsTemplates.push({
-  name: "More sleep",
-  events: [
-    new Event("Утренний туалет", 0, 30, 8, 15),
-    new Event("Зарядка", 0, 15),
-    new Event("Новости", 0, 15),
-    new Event("Завтрак", 0, 30),
-    new Event(rest, 0, 15),
-    ...eventsTemplates[0].events.slice(6, -1),
-    new Event("Сон", 10, 0),
-  ],
-})
-
-eventsTemplates.push({
-  name: "Controlled",
-  events: [
-    new Event("Утренний туалет", 0, 15, 7, 45),
-    new Event("Зарядка", 0, 15),
-    new Event("Новости", 0, 15),
-    new Event("Речь", 0, 15),
-    new Event("Завтрак", 0, 30),
-    new Event(rest, 0, 15),
-    separator,
-    ...workEvents,
-    separator,
-    new Event(rest, 0, 15),
-    new Event("Тренировка", 0, 30),
-    new Event("Растяжка", 0, 30),
-    new Event("Ужин", 0, 15),
-    separator,
-    new Event(rest, 0, 10),
-    new Event("Чтение", 0, 50),
-    new Event("Гитара", 0, 15),
-    new Event(rest, 0, 15),
-    new Event("💲💲💲", 1, 30),
-    separator,
-    new Event(rest, 0, 15),
-    new Event("Новости", 0, 45),
-    separator,
-    new Event("Чистка зубов", 0, 15),
-    new Event("Информационная изоляция", 0, 30),
-    new Event("Сон", 9, 0),
-  ],
-})
 
 let currentIndex = localStorage.getItem("currentIndex") || 0
 if (currentIndex >= eventsTemplates.length) currentIndex = 0
