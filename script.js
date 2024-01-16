@@ -95,6 +95,7 @@ const eventsTemplates = [
       new Event(rest, 0, 10),
       new Event("Чтение", 0, 50),
       new Event("Гитара", 0, 15),
+      separator,
       new Event(rest, 0, 15),
       new Event("💲💲💲", 1, 30),
       separator,
