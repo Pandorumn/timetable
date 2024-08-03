@@ -64,21 +64,11 @@ const rest = "☯"
 
 const separator = new Event("", 0, 0)
 
-const workEvents = [
-  new Event(work, 2, 0),
-  new Event("Тренировка", 0, 15),
-  new Event("Ланч", 0, 15),
-  new Event(work, 2, 0),
-  new Event("Тренировка", 0, 15),
-  new Event("Обед", 0, 15),
-  new Event(work, 2, 0),
-]
-
 const eventsTemplates = [
   {
     name: "Controlled",
     events: [
-      new Event("Утренний туалет", 0, 15, 7, 00),
+      new Event("Утренний туалет", 0, 15, 8, 00),
       new Event("Зарядка", 0, 15),
       new Event("Новости", 0, 15),
       new Event("Гитара", 0, 15),
@@ -87,20 +77,23 @@ const eventsTemplates = [
       new Event("Завтрак", 0, 30),
       new Event(rest, 0, 15),
       separator,
-      ...workEvents,
+      new Event(work, 3, 0),
+      new Event("Обед", 0, 30),
+      new Event(work, 3, 0),
+      new Event("Ужин", 0, 30),
+      separator,
+      new Event("Новости", 0, 15),
+      new Event("Гитара", 0, 45),
+      separator,
+      new Event("💲💲💲", 3, 00),
       separator,
       new Event("Тренировка", 0, 55),
       new Event("Растяжка", 0, 20),
-      new Event("Ужин", 0, 15),
-      separator,
-      new Event("Новости", 0, 45),
-      new Event("Гитара", 0, 15),
-      separator,
-      new Event("💲💲💲", 2, 00),
-      new Event("Чтение / англ.", 1, 00),
-      separator,
+      new Event("Душ", 0, 15),
       new Event("Чистка зубов", 0, 15),
+      separator,
       new Event("Информационная изоляция", 0, 15),
+      separator,
       new Event("Сон", 9, 0),
     ],
   },
