@@ -43,7 +43,7 @@ body {
 }
 
 .event {
-    padding: 0.6em;
+    padding: 0.8em;
     border: 1px solid;
     display: grid;
     grid-template-columns: 4em 12em 4em 0;
@@ -58,6 +58,7 @@ body {
 
 .event.empty {
     visibility: hidden;
+    padding: 0.4em;
 }
 
 .start-time {
