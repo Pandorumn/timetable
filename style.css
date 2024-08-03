@@ -46,8 +46,8 @@ body {
     padding: 0.8em;
     border: 1px solid;
     display: grid;
-    grid-template-columns: 4em 12em 4em 0;
-    grid-template-areas: "st-t name dur rem-t";
+    grid-template-columns: 4em 12em 4em;
+    grid-template-areas: "st-t name dur";
     align-items: center;
     justify-content: center;
     position: relative;
@@ -79,9 +79,11 @@ body {
 }
 
 .remaining-time {
-    grid-area: rem-t;
-    text-align: right;
-    margin-right: 0.5em;
+    position: absolute;
+    min-width: max-content;
+    color: #ccc;
+    left: calc(100% + 1.3em);
+    /* margin-right: 0.5em; */
 }
 
 .duration {
@@ -107,18 +109,12 @@ body {
     color: black;
     font-weight: 600;
     /* background: linear-gradient(to right, #0070bb88 30%, #afddfc 32%); */
-    grid-template-columns: 4em 12em 3.1em 4.4em;
-    grid-template-areas: "st-t name dur rem-t";
+    grid-template-columns: 4em 15em 4em;
 }
 
 .active .name {
     border: inherit;
     border-width: 1px;
-}
-
-.active .duration {
-    text-align: right;
-    margin-right: 0;
 }
 
 .info {

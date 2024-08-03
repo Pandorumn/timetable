@@ -253,7 +253,7 @@ function calcAndSetCompleteness(k, currentTime) {
     // Set remaining time
     document.querySelector(
       `#ev${k} .remaining-time`
-    ).textContent = ` ( ${remTimeToShow.hours}:${remTimeToShow.minutes} ) `
+    ).textContent = ` ${remTimeToShow.hours}:${remTimeToShow.minutes}`
   } else {
     // Clear inline styling
     document.querySelector(`#ev${k} .name`).style.background = ""
