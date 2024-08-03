@@ -61,6 +61,10 @@ body {
     padding: 0.4em;
 }
 
+.event:not(.empty) + .event:not(.active) {
+    border-top: none;
+}
+
 .start-time {
     grid-area: st-t;
     text-align: left;
