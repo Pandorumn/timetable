@@ -86,8 +86,9 @@ body {
     position: absolute;
     min-width: max-content;
     color: #ccc;
-    left: calc(100% + 1.3em);
-    /* margin-right: 0.5em; */
+    left: 100%;
+    padding-left: 1.3em;
+    padding-right: 0.5em;
 }
 
 .duration {
